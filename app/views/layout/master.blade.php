@@ -6,8 +6,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="Oscar Larriega">
 	<title>Challenge</title>
-	<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/main.css" rel="stylesheet">
+	<link href="css/main.min.css" rel="stylesheet">
 </head>
 <body class="cover {{ $background }}">
 	<div class="container">
@@ -37,7 +36,7 @@
 			</section>
 		</div>
 	</div>
-	<script src="bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
