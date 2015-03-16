@@ -1,3 +1,5 @@
 Challenger_1.2.ai
 bower_components/
 .DS_Store
+vendor/
+app/storage/logs/
