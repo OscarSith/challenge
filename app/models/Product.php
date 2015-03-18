@@ -8,7 +8,6 @@ class Product extends Eloquent
 		'codigo',
 		'nombre',
 		'descripcion',
-		'cracking',
 		'packing',
 		'precio',
 		'path_img',
@@ -24,6 +23,6 @@ class Product extends Eloquent
 
 	public function get()
 	{
-		return $this->where('estado', 'A')->paginate(8, array('path_img', 'path_thumb_img', 'nombre', 'packing', 'precio'));
+		return $this->where('estado', 'A')->paginate(8, array('path_img', 'path_thumb_img', 'codigo', 'nombre', 'packing', 'precio'));
 	}
 }

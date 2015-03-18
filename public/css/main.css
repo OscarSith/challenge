@@ -78,6 +78,32 @@ article {
 .carousel-control.right {
 	right: -7.5%
 }
+
+#main-product {
+	margin-top: -150px
+}
+#content-product {
+	margin: 15px 25px;
+	background-color: rgba(0, 0, 0, 0.6);
+	padding: 15px;
+}
+#content-img {
+	background-color: #fff
+}
+.content-product-img {
+	background-color: #fff;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	cursor: pointer;
+	height: 110px;
+	margin-bottom: 15px;
+	overflow: hidden;
+}
+#content-products .col-sm-3:hover, .product-selected {
+	background-color: rgba(0,0,0,.72);
+}
+
 @media (max-width: 800px) {
 	.carousel-control.left {
 		left: -2.5%;
@@ -95,6 +121,5 @@ article {
 	.container {
 		width: auto !important;
 		padding-right: 40px !important;
-		padding-left: 0 !important;
 	}
 }

@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@home');
+Route::get('/', array('as' => 'home', 'uses' => 'HomeController@home'));
 Route::get('nosotros', 'HomeController@aboutUs');
 Route::get('eventos', 'HomeController@events');
 Route::get('contacto', 'HomeController@contact');
