@@ -10,7 +10,7 @@
 				<input type="text" name="email" class="form-control" placeholder="Correo electrónico">
 			</div>
 			<div class="form-group">
-				<textarea name="message" class="form-control" rows="5" placeholder="Escriba su mensaje..."></textarea>
+				<textarea name="message" class="form-control" rows="7" placeholder="Escriba su mensaje...">{{ $message }}</textarea>
 			</div>
 			<div class="form-group">
 				<button class="btn btn-link btn-cha">ENVIAR</button>

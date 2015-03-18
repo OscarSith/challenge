@@ -7,19 +7,34 @@
 				<div class="col-sm-12 text-center">No hay productos que mostrar por el momento</div>
 			@else
 				@foreach($data as $rec)
-				<div class="col-sm-3">
-					<div class="content-product-img" data-img="{{ $rec->path_thumb_img }}" style="background-image: url('img/productos/{{ $rec->path_thumb_img }}')">
+					<?php $disabled = ''; ?>
+					@if(Session::has('product'))
+						@foreach(Session::get('product') as $val)
+							@if($val['id'] == $rec->id)
+								<?php
+								$disabled = 'disabled';
+								break;
+								?>
+							@endif
+						@endforeach
+					@endif
+					<div class="col-sm-3">
+						<div class="content-product-img" data-img="{{ $rec->path_thumb_img }}" style="background-image: url('img/productos/{{ $rec->path_thumb_img }}')">
+						</div>
+						{{ Form::open(array('route' => 'addToCart', 'role' => 'form', 'method'=>"post")) }}
+							{{ Form::hidden('id', $rec->id) }}
+							{{ Form::hidden('name', $rec->nombre) }}
+							<button class="btn btn-sm btn-link btn-cha" {{ $disabled }}>
+								{{ $disabled === 'disabled' ? 'Agregado' : 'Agregar' }}
+							</button>
+							<dl>
+								<dt>Codigo: <span>{{ $rec->codigo }}</span></dt>
+								<dt>Nombre:</dt>
+								<dd class="nom">{{ $rec->nombre }}</dd>
+								<dt>Packing: <span>{{ $rec->packing }}</span></dt>
+							</dl>
+						{{ Form::close()}}
 					</div>
-					<form>
-						<button class="btn btn-sm btn-link btn-cha">Agregar</button>
-						<dl>
-							<dt>Codigo: <span>{{ $rec->codigo }}</span></dt>
-							<dt>Nombre:</dt>
-							<dd class="nom">{{ $rec->nombre }}</dd>
-							<dt>Packing: <span>{{ $rec->packing }}</span></dt>
-						</dl>
-					</form>
-				</div>
 				@endforeach
 			@endif
 		</div>

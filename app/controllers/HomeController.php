@@ -23,7 +23,13 @@ class HomeController extends BaseController {
 	public function contact()
 	{
 		$background = 'contact';
-		return View::make('contacto', compact('background'));
+		$message = "\n\n\nProductos Seleccionados\n------------------------------\n";
+		if(Session::has('product')) {
+			foreach(Session::get('product') as $rec) {
+				$message .= $rec['name']."\n";
+			}
+		}
+		return View::make('contacto', compact('background', 'message'));
 	}
 
 	public function products()
@@ -32,5 +38,11 @@ class HomeController extends BaseController {
 		$Product = new Product();
 		$data = $Product->get();
 		return View::make('products', compact('background', 'data'));
+	}
+
+	public function addProductToCart()
+	{
+		Session::push('product', Input::only('id', 'name'));
+		return Redirect::back();
 	}
 }
