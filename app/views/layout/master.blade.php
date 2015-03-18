@@ -49,7 +49,7 @@
 								<img src="#" alt="" class="img-responsive center-block">
 							</div>
 							<div class="col-sm-8 col-sm-offset-2 text-left">
-								<button class="btn btn-link btn-cha">Cotizar</button>
+								<a class="btn btn-cha" href="contacto">Cotizar</a>
 								<p>
 									<strong>Código: </strong><span id="content-cod"></span>
 								</p>

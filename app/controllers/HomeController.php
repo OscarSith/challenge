@@ -23,8 +23,9 @@ class HomeController extends BaseController {
 	public function contact()
 	{
 		$background = 'contact';
-		$message = "\n\n\nProductos Seleccionados\n------------------------------\n";
+		$message = '';
 		if(Session::has('product')) {
+			$message = "\n\n\nProductos Seleccionados\n------------------------------\n";
 			foreach(Session::get('product') as $rec) {
 				$message .= $rec['name']."\n";
 			}
