@@ -23,6 +23,6 @@ class Product extends Eloquent
 
 	public function get()
 	{
-		return $this->where('estado', 'A')->orderBy('id', 'DESC')->paginate(8, array('id', 'path_thumb_img', 'codigo', 'nombre', 'packing', 'precio', 'created_at'));
+		return $this->where('estado', 'A')->orderBy('id', 'DESC')->paginate(10, array('id', 'path_thumb_img', 'codigo', 'nombre', 'packing', 'precio', 'created_at'));
 	}
 }

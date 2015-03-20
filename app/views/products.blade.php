@@ -6,6 +6,7 @@
 			@if($data->isEmpty())
 				<div class="col-sm-12 text-center">No hay productos que mostrar por el momento</div>
 			@else
+				<?php $n = 1; ?>
 				@foreach($data as $rec)
 					<?php $disabled = ''; ?>
 					@if(Session::has('product'))
@@ -18,23 +19,30 @@
 							@endif
 						@endforeach
 					@endif
-					<div class="col-sm-3">
-						<div class="content-product-img" data-img="{{ $rec->path_thumb_img }}" style="background-image: url('img/productos/{{ $rec->path_thumb_img }}')">
+					<div class="col-sm-15">
+						<div class="thumbnail" data-id="prod{{ $rec->id }}">
+							<img data-img="{{ $rec->path_thumb_img }}" src="img/productos/{{ $rec->path_thumb_img }}" alt="{{ $rec->path_thumb_img }}">
+							<div class="caption">
+								{{ Form::open(array('route' => 'addToCart', 'role' => 'form', 'method'=>"post")) }}
+									{{ Form::hidden('id', $rec->id) }}
+									{{ Form::hidden('name', $rec->nombre) }}
+									<button class="btn btn-xs btn-link btn-cha mb5" {{ $disabled }}>
+										{{ $disabled === 'disabled' ? 'Agregado' : 'Agregar' }}
+									</button>
+									<dl>
+										<dt>Codigo: <span>{{ $rec->codigo }}</span></dt>
+										<dt>Nombre:</dt>
+										<dd class="nom">{{ $rec->nombre }}</dd>
+										<dt>Packing: <span>{{ $rec->packing }}</span></dt>
+									</dl>
+								{{ Form::close()}}
+							</div>
 						</div>
-						{{ Form::open(array('route' => 'addToCart', 'role' => 'form', 'method'=>"post")) }}
-							{{ Form::hidden('id', $rec->id) }}
-							{{ Form::hidden('name', $rec->nombre) }}
-							<button class="btn btn-xs btn-link btn-cha mb5" {{ $disabled }}>
-								{{ $disabled === 'disabled' ? 'Agregado' : 'Agregar' }}
-							</button>
-							<dl>
-								<dt>Codigo: <span>{{ $rec->codigo }}</span></dt>
-								<dt>Nombre:</dt>
-								<dd class="nom">{{ $rec->nombre }}</dd>
-								<dt>Packing: <span>{{ $rec->packing }}</span></dt>
-							</dl>
-						{{ Form::close()}}
 					</div>
+					@if($n == 5)
+					<div class="clearfix"></div>
+					@endif
+					<?php $n++; ?>
 				@endforeach
 				<div class="col-sm-12 text-center">
 					{{ $data->links() }}

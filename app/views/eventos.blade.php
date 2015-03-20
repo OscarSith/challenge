@@ -18,8 +18,10 @@
 				<div class="item">
 					<div class="row">
 						<div class="col-sm-6">
-							<h3 class="text-right">Crea momentos extraordinarios</h3>
-							<p class="text-justify">En todo espectáculo, las personas desean sentir y presencia actos extraordinarios. Challenger eventos complementa este pectáculo creando un show de fuegos artificialespara el deleite del púplico, gracias a que cuenta con tecnología de última generación para un óptimo control y desarrollo de este.</p>
+							<h3 class="text-right">“Felices fiestas patrias, Perú”</h3>
+							<p class="text-justify">Llegan las fiestas patrias en nuestro Perú, y todas las calles se llenarán de rojo y blanco. Un mes con bastante dosis de peruanidad y Challenger eventos no puede faltar a esta gran celebración.</p>
+
+							<p class="text-justify">Por eso deseamos festejar con todos ustedes y brindarles el mejor show de fuegos artificiales activados por técnicos altamente calificados.</p>
 						</div>
 						<div class="col-sm-6">
 							<img src="img/eventos/flyer02.jpg" alt="Otros" class="img-responsive center-block">
@@ -51,8 +53,9 @@
 				<div class="item">
 					<div class="row">
 						<div class="col-sm-6">
-							<h3 class="text-right">Crea momentos extraordinarios</h3>
-							<p class="text-justify">En todo espectáculo, las personas desean sentir y presencia actos extraordinarios. Challenger eventos complementa este pectáculo creando un show de fuegos artificialespara el deleite del púplico, gracias a que cuenta con tecnología de última generación para un óptimo control y desarrollo de este.</p>
+							<h3 class="text-right">¡Feliz Año Nuevo!</h3>
+							<p class="text-justify">Celebra el comienzo de un nuevo año con el mejor espectáculo de fuegos artificiales creado por Challenger eventos, creemos que es un día que marca la oportunidad de volver a empezar y/o trazarse nuevos objetivos.<P>
+							<p class="text-justify">Por ello queremos que festejes este gran día con el cielo lleno de colores y magia de la manera más segura y responsable, garantizada por nuestros equipos y técnicos altamente calificados.</p>
 						</div>
 						<div class="col-sm-6">
 							<img src="img/eventos/flyer05.jpg" alt="Otros" class="img-responsive center-block">

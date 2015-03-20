@@ -73,6 +73,21 @@
 			</section>
 		</div>
 	</div>
+	<footer>
+		<div class="container">
+			<a href="https://www.facebook.com/challengerbusinessperu" target="_blank" class="fa-stack fb">
+				<i class="fa fa-square fa-stack-2x"></i>
+				<i class="fa fa-facebook fa-stack-1x"></i>
+			</a>
+			<a href="https://www.youtube.com/channel/UC4GiqmS4WLq6i6v3tFI0cjA" target="_blank" class="fa-stack yt">
+				<i class="fa fa-square fa-stack-2x"></i>
+				<i class="fa fa-youtube fa-stack-1x"></i>
+			</a>
+			<small class="pull-right">
+				<em>Miembro de la asociación de Importadores, Fabricantes y<br>Comercializadores de Productos Pirotécnicos del Perú.</em>
+			</small>
+		</div>
+	</footer>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script>
@@ -83,17 +98,22 @@
 				$this.remove();
 			});
 		});
-		var $co = $('#content-products').on('click', '.content-product-img', function() {
+		var id = 0;
+		var $co = $('#content-products').on('mouseover', '.thumbnail', function() {
 			var $this = $(this),
-				$form = $this.next();
+				prodID = $this.data('id');
 
-			$this.closest('.row').find('.product-selected').removeClass('product-selected');
-			$this.parent().addClass('product-selected');
-			$('#content-img img').attr('src', 'img/productos/'+$this.data('img'));
-			$('#content-cod').text($form.find('span').first().text().trim());
-			$('#content-name').text($form.find('.nom').text().trim());
-			$('#content-pack').text($form.find('span').last().text().trim());
-		}).find('.col-sm-3:first .content-product-img').click();
+			if (prodID != id) {
+				var $form = $this.find('form');
+				$this.closest('.row').find('.product-selected').removeClass('product-selected');
+				$this.children().addClass('product-selected');
+				$('#content-img img').attr('src', 'img/productos/'+$this.children().data('img'));
+				$('#content-cod').text($form.find('span').first().text().trim());
+				$('#content-name').text($form.find('.nom').text().trim());
+				$('#content-pack').text($form.find('span').last().text().trim());
+				id = prodID;
+			}
+		}).find('.col-sm-15:first .thumbnail').mouseover();
 	</script>
 </body>
 </html>
