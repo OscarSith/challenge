@@ -49,6 +49,9 @@ nav li:hover, .nav-active {
 .mb20 {
 	margin-bottom: 20px
 }
+.mb5{
+	margin-bottom: 5px
+}
 .btn-cha {
 	border: 1px solid #FFF;
 	border-radius: 0 !important;
@@ -86,6 +89,7 @@ article {
 	margin: 15px 25px;
 	background-color: rgba(0, 0, 0, 0.6);
 	padding: 15px;
+	font-size: 1.2em
 }
 #content-img {
 	background-color: #fff
@@ -96,9 +100,22 @@ article {
 	background-repeat: no-repeat;
 	background-size: cover;
 	cursor: pointer;
-	height: 110px;
+	height: 100px;
 	margin-bottom: 15px;
 	overflow: hidden;
+}
+#content-product p {
+	margin-bottom: 2px;
+}
+#content-products dl {
+	font-size: .85em;
+}
+#content-products .nom {
+	height: 30px;
+	overflow: hidden;
+}
+#content-products .col-sm-3 {
+	margin-bottom: 20px
 }
 #content-products .col-sm-3:hover, .product-selected {
 	background-color: rgba(0,0,0,.72);

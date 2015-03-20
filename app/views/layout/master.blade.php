@@ -43,13 +43,13 @@
 		<div class="row">
 			<section>
 				@if($background === 'product')
-					<div class="col-md-5 col-lg-6 hidden-xs hidden-sm" id="main-product">
+					<div class="col-sm-5 col-lg-offset-1 hidden-xs hidden-sm" id="main-product">
 						<div id="content-product" class="row">
 							<div id="content-img" class="mb20 text-center">
 								<img src="#" alt="" class="img-responsive center-block">
 							</div>
 							<div class="col-sm-8 col-sm-offset-2 text-left">
-								<a class="btn btn-cha" href="contacto">Cotizar</a>
+								<a class="btn btn-cha btn-lg mb20" href="contacto">Cotizar</a>
 								<p>
 									<strong>Código: </strong><span id="content-cod"></span>
 								</p>
@@ -62,7 +62,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-12 col-sm-offset-0 col-md-7 col-lg-6">
+					<div class="col-sm-12 col-md-7 col-lg-6">
 				@else
 					<div class="col-sm-12 col-sm-offset-0 col-md-7 col-md-offset-5 col-lg-6 col-lg-offset-6">
 				@endif

@@ -4,14 +4,28 @@ class AdminController extends BaseController {
 
 	public function admin()
 	{
-		$txt_loading = '';
-		return View::make('admin', compact('txt_loading'));
+		$Product = new Product();
+		$productos = $Product->get();
+		$title = 'Challenge - Admin';
+		return View::make('admin', compact('title', 'productos'));
 	}
 
 	public function add()
 	{
-		$Product = new Product();
-		$Product->add(Input::all());
-		return Redirect::back();
+		$file = Input::file('path_thumb_img');
+		if ($file->isValid()) {
+			$values = Input::only('codigo', 'nombre', 'packing', 'precio');
+			$fileName = str_replace(' ', '_', $file->getClientOriginalName());
+			$values['path_thumb_img'] = $fileName;
+			$values['path_img'] = $fileName;
+
+			$file->move(public_path().'/img/productos', $fileName);
+
+			$Product = new Product();
+			$Product->add($values);
+			return Redirect::back();
+		} else {
+			return Redirect::back()->with('file', 1);
+		}
 	}
 }

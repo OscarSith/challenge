@@ -20,6 +20,15 @@ module.exports = function(grunt) {
 						'css/main.css'
 					]
 				}
+			},
+			admin: {
+				files: {
+					'css/admin.min.css': [
+						'bower_components/bootstrap/dist/css/bootstrap.min.css',
+						'css/font-awesome.min.css',
+						'css/sb-admin.css'
+					]
+				}
 			}
 		}
 	});
@@ -27,5 +36,6 @@ module.exports = function(grunt) {
 	//grunt.loadNpmTasks('grunt-contrib-requirejs');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-	grunt.registerTask('css', ['cssmin']);
+	grunt.registerTask('css', ['cssmin:combine']);
+	grunt.registerTask('cssAdmin', ['cssmin:admin']);
 };

@@ -1,24 +1,26 @@
-@extends('layout.admin')
+@extends('layout.admin_master')
 
 @section('content')
-	{{Form::open(array('route' => 'addProduct', 'role' => 'form', 'id' => 'addProduct'))}}
-		<div class="form-group">
-			{{ Form::text('codigo', null, array('class' => 'form-control', 'placeholder' => 'Codigo')) }}
-		</div>
-		<div class="form-group">
-			{{ Form::text('nombre', null, array('class' => 'form-control', 'placeholder' => 'Nombre')) }}
-		</div>
-		<div class="form-group">
-			{{ Form::text('packing', null, array('class' => 'form-control', 'placeholder' => 'Packing')) }}
-		</div>
-		<div class="form-group">
-			{{ Form::text('precio', null, array('class' => 'form-control', 'placeholder' => 'Precio')) }}
-		</div>
-		<div class="form-group">
-			{{ Form::text('path_thumb_img', null, array('class' => 'form-control', 'placeholder' => 'Path_thumb_img')) }}
-		</div>
-		<div class="form-group">
-			{{ Form::submit('Guardar', array('class' => 'btn btn-primary')) }}
-		</div>
-	{{Form::close()}}
+	<h2 class="page-header">Listado de productos</h2>
+	{{ $productos->links() }}
+	<div class="row">
+		@foreach($productos as $rec)
+			<div class="col-sm-4 col-md-3">
+				<div class="thumbnail">
+					<img src="img/productos/{{ $rec->path_thumb_img }}" alt="{{ $rec->path_thumb_img }}" style="height:170px">
+					<div class="caption">
+						<h3>{{ $rec->codigo }}</h3>
+						<p style="height:80px">{{ $rec->nombre }}</p>
+						<p><strong>Packing:</strong> {{ $rec->packing }}</p>
+						<small>Creado el: {{ $rec->created_at }}</small>
+						{{-- <p>
+							<a href="#" class="btn btn-primary" role="button">Button</a>
+							<a href="#" class="btn btn-default" role="button">Button</a>
+						</p> --}}
+					</div>
+				</div>
+			</div>
+		@endforeach
+	</div>
+	{{ $productos->links() }}
 @stop

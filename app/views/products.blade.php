@@ -24,7 +24,7 @@
 						{{ Form::open(array('route' => 'addToCart', 'role' => 'form', 'method'=>"post")) }}
 							{{ Form::hidden('id', $rec->id) }}
 							{{ Form::hidden('name', $rec->nombre) }}
-							<button class="btn btn-sm btn-link btn-cha" {{ $disabled }}>
+							<button class="btn btn-xs btn-link btn-cha mb5" {{ $disabled }}>
 								{{ $disabled === 'disabled' ? 'Agregado' : 'Agregar' }}
 							</button>
 							<dl>
@@ -36,6 +36,9 @@
 						{{ Form::close()}}
 					</div>
 				@endforeach
+				<div class="col-sm-12 text-center">
+					{{ $data->links() }}
+				</div>
 			@endif
 		</div>
 	</article>
