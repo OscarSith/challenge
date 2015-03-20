@@ -119,8 +119,15 @@ article {
 #content-products .col-sm-3:hover, .product-selected {
 	background-color: rgba(0,0,0,.72);
 }
-
 footer {
+}
+
+/* Calculo del footer*/
+#wrap {
+	min-height: calc(100vh - 49px);
+}
+footer {
+	min-height: 49px; /* Calculo del footer*/
 	background-color: #000;
 	padding-top: 8px;
 	padding-bottom: 8px

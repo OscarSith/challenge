@@ -9,7 +9,7 @@
 	<link href="css/main.min.css" rel="stylesheet">
 </head>
 <body class="cover {{ $background }}">
-	<div class="container">
+	<div class="container" id="wrap">
 		<div class="row">
 			<div class="hidden-xs" id="space-top"></div>
 			<header class="col-sm-12 col-sm-offset-0 col-md-7 col-md-offset-5 col-lg-6 col-lg-offset-6">
