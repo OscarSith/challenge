@@ -15,7 +15,7 @@ class AdminController extends BaseController {
 		$file = Input::file('path_thumb_img');
 		if ($file->isValid()) {
 			$values = Input::only('codigo', 'nombre', 'packing', 'precio');
-			$fileName = str_replace(' ', '_', $file->getClientOriginalName());
+			$fileName = str_replace([' ', '-'], '_', $file->getClientOriginalName());
 			$values['path_thumb_img'] = $fileName;
 			$values['path_img'] = $fileName;
 
