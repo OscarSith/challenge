@@ -10,7 +10,7 @@ body {
 	background-image: url('../img/bg_nosotros.jpg');
 }
 .product {
-	background-image: url('../img/bg_nosotros.jpg');
+	background-image: url('../img/bg_productos.jpg');
 }
 .events {
 	background-image: url('../img/bg_eventos.jpg');
@@ -20,7 +20,8 @@ body {
 }
 header h1 {
 	border-top: 2px solid #FFF;
-	padding-top: 15px
+	letter-spacing: .38em;
+	padding-top: 15px;
 }
 nav a {
 	color: #fff;
@@ -39,12 +40,8 @@ nav li:hover a, .nav-active a, .btn-cha:hover {
 	color: #333;
 	text-decoration: none;
 }
-nav li:hover, .nav-active {
-	border-bottom: 1px solid #FFF;
-	padding-bottom: 10px;
-}
 .mr0 {
-	margin-right: 0 !important
+	margin-right: 0
 }
 .mb20 {
 	margin-bottom: 20px
@@ -156,7 +153,7 @@ footer .yt:hover .fa-stack-2x{
 		right: -2.5%
 	}
 }
-@media (max-width: 1050px) {
+@media (min-width: 768px) and (max-width: 1050px) {
 	.nav>li>a {
 		font-size: .85em;
 	}
@@ -165,12 +162,6 @@ footer .yt:hover .fa-stack-2x{
 	.container {
 		width: auto !important;
 		padding-right: 40px !important;
-	}
-}
-@media (min-width: 768px) {
-	.col-sm-15 {
-		padding-left: 5px !important;
-		padding-right: 5px !important;
 	}
 }
 
@@ -188,11 +179,36 @@ footer .yt:hover .fa-stack-2x{
     width: 20%;
     float: left;
 }
+@media (max-width: 768px) {
+	.nav-pills>li {
+		margin-left: 2px
+	}
+	.mr0 {
+		margin-right: 4px
+	}
+	header h1 {
+		letter-spacing: normal;
+	}
+	.thumbnail .caption {
+		width: 75%;
+		margin-left:auto;
+		margin-right:auto;
+	}
+	.caption dl {
+		font-size: 1em !important;
+	}
+}
 @media (min-width: 768px) {
-.col-sm-15 {
-        width: 20%;
-        float: left;
+	.col-sm-15 {
+		width: 20%;
+		float: left;
+		padding-left: 5px !important;
+		padding-right: 5px !important;
     }
+    nav li:hover, .nav-active {
+		border-bottom: 1px solid #FFF;
+		padding-bottom: 10px;
+	}
 }
 @media (min-width: 992px) {
     .col-md-15 {
