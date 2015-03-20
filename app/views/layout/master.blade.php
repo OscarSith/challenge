@@ -98,22 +98,51 @@
 				$this.remove();
 			});
 		});
-		var id = 0;
-		var $co = $('#content-products').on('mouseover', '.thumbnail', function() {
-			var $this = $(this),
-				prodID = $this.data('id');
 
-			if (prodID != id) {
-				var $form = $this.find('form');
-				$this.closest('.row').find('.product-selected').removeClass('product-selected');
-				$this.children().addClass('product-selected');
-				$('#content-img img').attr('src', 'img/productos/'+$this.children().data('img'));
-				$('#content-cod').text($form.find('span').first().text().trim());
-				$('#content-name').text($form.find('.nom').text().trim());
-				$('#content-pack').text($form.find('span').last().text().trim());
-				id = prodID;
-			}
-		}).find('.col-sm-15:first .thumbnail').mouseover();
+		var $products = $('#content-products');
+		if ($products.length) {
+			var id = 0;
+			$products.on('mouseover', '.thumbnail', function() {
+				var $this = $(this),
+					prodID = $this.data('id');
+
+				if (prodID != id) {
+					var $form = $this.find('form');
+					$this.closest('.row').children('.product-selected:not(.pselected)').removeClass('product-selected');
+					$this.parent().addClass('product-selected');
+					$('#content-img img').attr('src', 'img/productos/'+$this.children().data('img'));
+					$('#content-cod').text($form.find('span').first().text().trim());
+					$('#content-name').text($form.find('.nom').text().trim());
+					$('#content-pack').text($form.find('span').last().text().trim());
+					id = prodID;
+				}
+			}).find('.col-sm-15:first .thumbnail').mouseover();
+
+			$products.on('submit', 'form', function(e) {
+				e.preventDefault();
+				var $this = $(this),
+					data = $this.serialize(),
+					$inputs = $this.find(':input');
+
+				$inputs.prop('disabled', true);
+				$inputs.last().text('Procesando...');
+				$.ajax({
+					url: $this.attr('action'),
+					data: data,
+					type: 'POST',
+					dataType: 'json'
+				}).done(function(rec) {
+					$inputs.prop('disabled', false);
+					if (rec.type === 'add') {
+						$this.closest('.col-sm-15').addClass('product-selected pselected');
+						$inputs.last().text('Cancelar');
+					} else {
+						$this.closest('.col-sm-15').removeClass('pselected');
+						$inputs.last().text('Agregar');
+					}
+				});
+			});
+		}
 	</script>
 </body>
 </html>

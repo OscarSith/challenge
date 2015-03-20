@@ -44,7 +44,25 @@ class HomeController extends BaseController {
 	public function addProductToCart()
 	{
 		Session::push('product', Input::only('id', 'name'));
-		return Redirect::back();
+		return Response::json(array('type' => 'add'));
+	}
+
+	public function removeToCart()
+	{
+		$values = Input::only('id');
+		$data = Session::get('product');
+		$n = 0;
+
+		foreach ($data as $rec) {
+			if($rec['id'] == $values['id']) {
+				unset($data[$n]);
+				break;
+			}
+			$n++;
+		}
+		sort($data);// Reordeno los indices
+		Session::set('product', $data);
+		return Response::json(array('type' => 'remove'));
 	}
 
 	public function send()

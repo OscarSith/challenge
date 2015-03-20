@@ -8,26 +8,30 @@
 			@else
 				<?php $n = 1; ?>
 				@foreach($data as $rec)
-					<?php $disabled = ''; ?>
+					<?php
+					$cancel = false;
+					$route = 'addToCart';
+					?>
 					@if(Session::has('product'))
 						@foreach(Session::get('product') as $val)
 							@if($val['id'] == $rec->id)
 								<?php
-								$disabled = 'disabled';
+								$cancel = true;
+								$route = 'removeToCart';
 								break;
 								?>
 							@endif
 						@endforeach
 					@endif
-					<div class="col-sm-15">
+					<div class="col-sm-15 {{ $cancel ? 'product-selected pselected' : ''}}">
 						<div class="thumbnail" data-id="prod{{ $rec->id }}">
 							<img data-img="{{ $rec->path_thumb_img }}" src="img/productos/{{ $rec->path_thumb_img }}" alt="{{ $rec->path_thumb_img }}">
 							<div class="caption">
-								{{ Form::open(array('route' => 'addToCart', 'role' => 'form', 'method'=>"post")) }}
+								{{ Form::open(array('route' => $route, 'role' => 'form', 'method'=>"post")) }}
 									{{ Form::hidden('id', $rec->id) }}
 									{{ Form::hidden('name', $rec->nombre) }}
-									<button class="btn btn-xs btn-link btn-cha mb5" {{ $disabled }}>
-										{{ $disabled === 'disabled' ? 'Agregado' : 'Agregar' }}
+									<button class="btn btn-xs btn-link btn-cha mb5">
+										{{ $cancel ? 'Cancelar' : 'Agregar' }}
 									</button>
 									<dl>
 										<dt>Codigo: <span>{{ $rec->codigo }}</span></dt>

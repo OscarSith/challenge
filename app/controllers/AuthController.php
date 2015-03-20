@@ -10,7 +10,7 @@ class AuthController extends BaseController
 
 	public function signin()
 	{
-		$back = Redirect::back();
+		$back = Redirect::to('admin');
 		$data = Input::only(array('email', 'password', 'remember'));
 		$credentials = array(
 			'email' => $data['email'], 
