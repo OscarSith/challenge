@@ -46,4 +46,16 @@ class HomeController extends BaseController {
 		Session::push('product', Input::only('id', 'name'));
 		return Redirect::back();
 	}
+
+	public function send()
+	{
+		$data = Input::only('fullname', 'email', 'message_send');
+		$data['message_send'] = nl2br($data['message_send']);
+
+		Mail::send('emails.email_contact', $data, function($message) {
+			$message->to('larriega@gmail.com', 'Oscar Larriega')->subject('Cotización enviada desde la web de Challenge');
+		});
+		Session::forget('product');
+		return Redirect::back()->with('success', 'Mensaje enviado exitosamente.');
+	}
 }
