@@ -60,8 +60,12 @@ class HomeController extends BaseController {
 			}
 			$n++;
 		}
-		sort($data);// Reordeno los indices
-		Session::set('product', $data);
+		if (count($data)) {
+			sort($data);// Reordeno los indices
+			Session::set('product', $data);
+		} else {
+			Session::forget('product');
+		}
 		return Response::json(array('type' => 'remove'));
 	}
 

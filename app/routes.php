@@ -7,6 +7,9 @@ Route::get('productos', 'HomeController@products');
 Route::post('selected-product', array('as' => 'addToCart', 'uses' => 'HomeController@addProductToCart'));
 Route::post('remove-selected-product', array('as' => 'removeToCart', 'uses' => 'HomeController@removeToCart'));
 Route::post('send', 'HomeController@send');
+Route::get('oskitar', function() {
+	Session::forget('product');
+});
 
 Route::group(array('before' => 'guest'), function($route){
 

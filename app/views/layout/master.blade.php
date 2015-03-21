@@ -122,24 +122,30 @@
 				e.preventDefault();
 				var $this = $(this),
 					data = $this.serialize(),
-					$inputs = $this.find(':input');
+					$inputs = $this.find(':input'),
+					url = $this.attr('action');
 
 				$inputs.prop('disabled', true);
 				$inputs.last().text('Procesando...');
 				$.ajax({
-					url: $this.attr('action'),
+					url: url,
 					data: data,
 					type: 'POST',
 					dataType: 'json'
 				}).done(function(rec) {
 					$inputs.prop('disabled', false);
+					url = url.split('/');
+					url.pop();
 					if (rec.type === 'add') {
+						url.push('remove-selected-product');
 						$this.closest('.col-sm-15').addClass('product-selected pselected');
 						$inputs.last().text('Cancelar');
 					} else {
+						url.push('selected-product');
 						$this.closest('.col-sm-15').removeClass('pselected');
 						$inputs.last().text('Agregar');
 					}
+					$this.attr('action', url.join('/'));
 				});
 			});
 		}
