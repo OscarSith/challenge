@@ -23,5 +23,7 @@ Route::group(array('before' => 'auth'), function($route) {
 	$route->get('admin', 'AdminController@admin');
 	$route->post('add', array('as' => 'addProduct', 'uses' => 'AdminController@add'));
 	$route->get('signout', array('as' => 'signout', 'uses' => 'AuthController@signout'));
+	$route->delete('remove-product', 'AdminController@remove');
+	$route->put('change-status', 'AdminController@changeStatus');
 
 });
