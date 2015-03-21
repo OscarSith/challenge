@@ -197,6 +197,11 @@ footer .yt:hover .fa-stack-2x{
 	.caption dl {
 		font-size: 1em !important;
 	}
+	.btn-cotizar {
+		font-size: 1.3em;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
 }
 @media (min-width: 768px) {
 	.col-sm-15 {
