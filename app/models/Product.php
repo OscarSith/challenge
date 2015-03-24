@@ -33,7 +33,10 @@ class Product extends Eloquent
 	public function remove($id)
 	{
 		$producto = Product::find($id);
-		return $producto->delete();
+		$img = $producto->path_thumb_img;
+		$rpta = $producto->delete();
+		File::delete(public_path('/img/productos/'.$img));
+		return $rpta;
 	}
 
 	public function changeStatus($values)

@@ -10,8 +10,7 @@ class AdminController extends BaseController {
 		return View::make('admin', compact('title', 'productos'));
 	}
 
-	public function add()
-	{
+	public function add() {
 		$file = Input::file('path_thumb_img');
 		$type = $file->getMimeType();
 		if ($type === 'image/png' || $type === 'image/jpeg' || $type === 'image/gif' || $type === 'image/jpg') {
