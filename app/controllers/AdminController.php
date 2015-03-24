@@ -22,9 +22,9 @@ class AdminController extends BaseController {
 				$values['path_img'] = $fileName;
 
 				try {
-					$file->move(public_path().'/img/productos', $fileName);
-				} catch (FileException $fex) {
-					Log::error($fex->getMessage());
+					Image::make($file->getRealPath())->resize('340', '320')->save(public_path('/img/productos/'.$fileName));
+				} catch (Exception $ex) {
+					Log::error($ex->getMessage());
 					return Redirect::back()->with('error', 'Ups... no se puede procesar el archivo subido, contacte con Blue360');
 				}
 

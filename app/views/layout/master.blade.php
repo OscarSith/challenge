@@ -49,7 +49,9 @@
 								<img src="#" alt="" class="img-responsive center-block">
 							</div>
 							<div class="col-sm-8 col-sm-offset-2 text-left">
-								<a class="btn btn-cha btn-lg mb20" href="contacto">Cotizar</a>
+								<div class="text-center">
+									<a class="btn btn-cha btn-lg mb20" href="contacto">Cotizar</a>
+								</div>
 								<p>
 									<strong>Código: </strong><span id="content-cod"></span>
 								</p>
@@ -75,14 +77,17 @@
 	</div>
 	<footer>
 		<div class="container">
-			<a href="https://www.facebook.com/challengerbusinessperu" target="_blank" class="fa-stack fb">
-				<i class="fa fa-square fa-stack-2x"></i>
-				<i class="fa fa-facebook fa-stack-1x"></i>
-			</a>
-			<a href="https://www.youtube.com/channel/UC4GiqmS4WLq6i6v3tFI0cjA" target="_blank" class="fa-stack yt">
-				<i class="fa fa-square fa-stack-2x"></i>
-				<i class="fa fa-youtube fa-stack-1x"></i>
-			</a>
+			<div class="pull-left">
+				<a href="https://www.facebook.com/challengerbusinessperu" target="_blank" class="fa-stack fb">
+					<i class="fa fa-square fa-stack-2x"></i>
+					<i class="fa fa-facebook fa-stack-1x"></i>
+				</a>
+				<a href="https://www.youtube.com/channel/UC4GiqmS4WLq6i6v3tFI0cjA" target="_blank" class="fa-stack yt">
+					<i class="fa fa-square fa-stack-2x"></i>
+					<i class="fa fa-youtube fa-stack-1x"></i>
+				</a>
+				<p class="mb0"><i class="fa fa-copyright"></i> Copyright 2015</p>
+			</div>
 			<small class="pull-right">
 				<em>Miembro de la asociación de Importadores, Fabricantes y<br>Comercializadores de Productos Pirotécnicos del Perú.</em>
 			</small>
@@ -112,7 +117,7 @@
 					$this.parent().addClass('product-selected');
 					$('#content-img img').attr('src', 'img/productos/'+$this.children().data('img'));
 					$('#content-cod').text($form.find('span').first().text().trim());
-					$('#content-name').text($form.find('.nom').text().trim());
+					$('#content-name').text($form.find('dd').text().trim());
 					$('#content-pack').text($form.find('span').last().text().trim());
 					id = prodID;
 				}
