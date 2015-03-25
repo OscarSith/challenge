@@ -92,7 +92,7 @@ article {
 }
 #content-img {
 	background-color: #fff;
-	height: 320px;
+	height: 290px;
 	overflow: hidden;
 }
 .thumbnail {
@@ -177,6 +177,19 @@ footer .yt:hover .fa-stack-2x{
 	.container {
 		width: auto !important;
 		padding-right: 40px !important;
+	}
+	#content-product {
+		margin: 15px 0;
+	}
+}
+@media (max-width: 1200px) {
+	#content-img {
+		height: 250px;
+	}
+}
+@media (max-width: 1050px) {
+	#content-img {
+		height: 215px;
 	}
 }
 

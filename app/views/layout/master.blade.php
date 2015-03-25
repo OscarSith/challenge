@@ -43,13 +43,17 @@
 		<div class="row">
 			<section>
 				@if($background === 'product')
-					<div class="col-sm-6 hidden-xs hidden-sm" id="main-product">
+					<div class="col-md-5 col-lg-6 hidden-xs hidden-sm" id="main-product">
 						<div class="row">
 							<div class="col-sm-4">
-								<?php $path = explode('-', $_SERVER['REQUEST_URI']) ?>
+								<?php
+								$path = explode('-', $_SERVER['REQUEST_URI']);
+								$arr = array();
+								?>
 								<ul class="nav nav-stacked">
 								@foreach($categorias->toArray() as $rec)
-									<li>
+									<?php $arr[$rec['id']] = $rec['nombre'] ?>
+									<li id="pl{{ $rec['id'] }}">
 										<a href="{{ route('productos', array($rec['path'], $rec['id'])) }}" class="{{ $rec['id'] == $path[1] ? 'category-selected' : ''}}">
 											{{ $rec['nombre'] }}
 										</a>
@@ -79,6 +83,9 @@
 								</div>
 							</div>
 						</div>
+					</div>
+					<div class="visible-xs visible-sm col-sm-6 col-sm-offset-3">
+						{{ Form::select('categoria_id', $arr, $path[1], array('class' => 'form-control mb20', 'id' => 'cat_id')) }}
 					</div>
 					<div class="col-sm-12 col-md-7 col-lg-6">
 				@else
@@ -168,6 +175,11 @@
 					}
 					$this.attr('action', url.join('/'));
 				});
+			});
+			$('#cat_id').on('change', function() {
+				var value = $(this).val(),
+					url = $('#pl'+value+' a').attr('href');
+				location.href = url;
 			});
 		}
 	</script>
