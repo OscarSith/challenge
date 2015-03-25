@@ -6,7 +6,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="Oscar Larriega">
 	<title>Challenge</title>
-	<link href="css/main.min.css" rel="stylesheet">
+	<link href="{{ asset('css/main.min.css') }}" rel="stylesheet">
 </head>
 <body class="cover {{ $background }}">
 	<div class="container" id="wrap">
@@ -15,7 +15,7 @@
 			<header class="col-sm-12 col-sm-offset-0 col-md-7 col-md-offset-5 col-lg-6 col-lg-offset-6">
 				<div class="row text-center">
 					<a href="/">
-						<img src="img/logo_challenge.png" alt="Logo Challenge">
+						<img src="{{ asset('img/logo_challenge.png') }}" alt="Logo Challenge">
 					</a>
 				</div>
 				<h1 class="text-center">CHALLENGER PERÚ</h1>
@@ -28,7 +28,7 @@
 							<a href="nosotros">NOSOTROS</a>
 						</li>
 						<li {{ $background === 'product' ? 'class="nav-active"' :''}}>
-							<a href="productos">PRODUCTOS</a>
+							<a href="{{ route('productos', array('novedades', 1))}}">PRODUCTOS</a>
 						</li>
 						<li {{ $background === 'events' ? 'class="nav-active"' :''}}>
 							<a href="eventos">EVENTOS</a>
@@ -43,24 +43,40 @@
 		<div class="row">
 			<section>
 				@if($background === 'product')
-					<div class="col-sm-5 col-lg-offset-1 hidden-xs hidden-sm" id="main-product">
-						<div id="content-product" class="row">
-							<div id="content-img" class="mb20 text-center">
-								<img src="#" alt="" class="img-responsive center-block">
+					<div class="col-sm-6 hidden-xs hidden-sm" id="main-product">
+						<div class="row">
+							<div class="col-sm-4">
+								<?php $path = explode('-', $_SERVER['REQUEST_URI']) ?>
+								<ul class="nav nav-stacked">
+								@foreach($categorias->toArray() as $rec)
+									<li>
+										<a href="{{ route('productos', array($rec['path'], $rec['id'])) }}" class="{{ $rec['id'] == $path[1] ? 'category-selected' : ''}}">
+											{{ $rec['nombre'] }}
+										</a>
+									</li>
+								@endforeach
+								</ul>
 							</div>
-							<div class="col-sm-8 col-sm-offset-2 text-left">
-								<div class="text-center">
-									<a class="btn btn-cha btn-lg mb20" href="contacto">Cotizar</a>
+							<div class="col-sm-8">
+								<div id="content-product" class="row">
+									<div id="content-img" class="mb20 text-center">
+										<img src="#" alt="" class="img-responsive center-block">
+									</div>
+									<div class="col-sm-8 col-sm-offset-2 text-left">
+										<div class="text-center">
+											<a class="btn btn-cha btn-lg mb20" href="contacto">Cotizar</a>
+										</div>
+										<p>
+											<strong>Código: </strong><span id="content-cod"></span>
+										</p>
+										<p>
+											<strong>Nombre: </strong><span id="content-name"></span>
+										</p>
+										<p>
+											<strong>Packing: </strong><span id="content-pack"></span>
+										</p>
+									</div>
 								</div>
-								<p>
-									<strong>Código: </strong><span id="content-cod"></span>
-								</p>
-								<p>
-									<strong>Nombre: </strong><span id="content-name"></span>
-								</p>
-								<p>
-									<strong>Packing: </strong><span id="content-pack"></span>
-								</p>
 							</div>
 						</div>
 					</div>
@@ -93,8 +109,8 @@
 			</small>
 		</div>
 	</footer>
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<script src="{{ asset('js/jquery.min.js') }}"></script>
+	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 	<script>
 		$('#btn-show-more-home').on('click', function(e) {
 			e.preventDefault();
@@ -115,7 +131,7 @@
 					var $form = $this.find('form');
 					$this.closest('.row').children('.product-selected:not(.pselected)').removeClass('product-selected');
 					$this.parent().addClass('product-selected');
-					$('#content-img img').attr('src', 'img/productos/'+$this.children().data('img'));
+					$('#content-img img').attr('src', '{{ asset('') }}img/productos/'+$this.children().data('img'));
 					$('#content-cod').text($form.find('span').first().text().trim());
 					$('#content-name').text($form.find('dd').text().trim());
 					$('#content-pack').text($form.find('span').last().text().trim());

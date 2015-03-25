@@ -5,9 +5,17 @@ class AdminController extends BaseController {
 	public function admin()
 	{
 		$Product = new Product();
+		$Categoria = new Categoria();
+
 		$productos = $Product->get(true);
+		$categorias = $Categoria->get();
+
+		$dataCategorias = array();
+		foreach ($categorias->toArray() as $key) {
+			$dataCategorias[$key['id']] = $key['nombre'];
+		}
 		$title = 'Challenge - Admin';
-		return View::make('admin', compact('title', 'productos'));
+		return View::make('admin', compact('title', 'productos', 'dataCategorias'));
 	}
 
 	public function add() {
@@ -15,7 +23,7 @@ class AdminController extends BaseController {
 		$type = $file->getMimeType();
 		if ($type === 'image/png' || $type === 'image/jpeg' || $type === 'image/gif' || $type === 'image/jpg') {
 			if ($file->isValid()) {
-				$values = Input::only('codigo', 'nombre', 'packing', 'precio');
+				$values = Input::only('categoria_id', 'codigo', 'nombre', 'packing', 'precio');
 				$fileName = str_replace([' ', '-'], '_', $file->getClientOriginalName());
 				$values['path_thumb_img'] = $fileName;
 				$values['path_img'] = $fileName;

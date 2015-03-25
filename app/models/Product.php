@@ -5,12 +5,12 @@ class Product extends Eloquent
 	protected $table = 'products';
 
 	protected $fillable = array(
+		'categoria_id',
 		'codigo',
 		'nombre',
 		'descripcion',
 		'packing',
 		'precio',
-		'path_img',
 		'path_thumb_img',
 	);
 
@@ -21,11 +21,14 @@ class Product extends Eloquent
 		return true;
 	}
 
-	public function get($flag = false)
+	public function get($flag = false, $categoria_id = 0)
 	{
 		$smt = $this;
 		if (!$flag) {
 			$smt = $this->where('estado', 'A');
+			if ($categoria_id) {
+				$smt = $smt->where('categoria_id', $categoria_id);
+			}
 		}
 		return $smt->orderBy('id', 'DESC')->paginate(10, array('id', 'path_thumb_img', 'codigo', 'nombre', 'packing', 'precio', 'estado', 'created_at'));
 	}

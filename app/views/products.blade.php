@@ -25,7 +25,7 @@
 					@endif
 					<div class="col-sm-15 {{ $cancel ? 'product-selected pselected' : ''}}">
 						<div class="thumbnail" data-id="prod{{ $rec->id }}">
-							<img data-img="{{ $rec->path_thumb_img }}" src="img/productos/{{ $rec->path_thumb_img }}" alt="{{ $rec->path_thumb_img }}">
+							<img data-img="{{ $rec->path_thumb_img }}" src="{{ asset('img/productos/'.$rec->path_thumb_img) }}" alt="{{ $rec->path_thumb_img }}">
 							<div class="caption">
 								{{ Form::open(array('route' => $route, 'role' => 'form', 'method'=>"post")) }}
 									{{ Form::hidden('id', $rec->id) }}

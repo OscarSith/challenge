@@ -4,6 +4,7 @@ Route::get('nosotros', 'HomeController@aboutUs');
 Route::get('eventos', 'HomeController@events');
 Route::get('contacto', 'HomeController@contact');
 Route::get('productos', 'HomeController@products');
+Route::get('productos/{name}-{id}', array('as' => 'productos', 'uses' => 'HomeController@products'));
 Route::post('selected-product', array('as' => 'addToCart', 'uses' => 'HomeController@addProductToCart'));
 Route::post('remove-selected-product', array('as' => 'removeToCart', 'uses' => 'HomeController@removeToCart'));
 Route::post('send', 'HomeController@send');

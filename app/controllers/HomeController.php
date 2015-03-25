@@ -33,12 +33,16 @@ class HomeController extends BaseController {
 		return View::make('contacto', compact('background', 'message'));
 	}
 
-	public function products()
+	public function products($name = null, $id = 0)
 	{
 		$background = 'product';
 		$Product = new Product();
-		$data = $Product->get();
-		return View::make('products', compact('background', 'data'));
+		$Categoria = new Categoria();
+
+		$data = $Product->get(false, $id);
+		$categorias = $Categoria->get($id);
+
+		return View::make('products', compact('background', 'data', 'categorias'));
 	}
 
 	public function addProductToCart()

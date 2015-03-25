@@ -77,6 +77,7 @@
                 </div>
                 <div class="modal-body">
                     {{Form::open(array('route' => 'addProduct', 'role' => 'form', 'id' => 'addProduct', 'files' => true))}}
+                        {{ Form::hidden('precio', 0.00) }}
                         <div class="form-group">
                             {{ Form::text('nombre', null, array('class' => 'form-control', 'placeholder' => 'Nombre')) }}
                         </div>
@@ -92,8 +93,8 @@
                         </div>
                         <div class="form-group">
                             <div class="row">
-                                <div class="col-sm-3">
-                                    {{ Form::text('precio', null, array('class' => 'form-control', 'placeholder' => 'Precio')) }}
+                                <div class="col-sm-6">
+                                    {{ Form::select('categoria_id', $dataCategorias, null, array('class' => 'form-control')) }}
                                 </div>
                             </div>
                         </div>

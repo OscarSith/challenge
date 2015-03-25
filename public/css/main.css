@@ -120,7 +120,18 @@ article {
 #content-products .col-sm-3:hover, .product-selected {
 	background-color: rgba(0,0,0,.72);
 }
-footer {
+.nav-stacked {
+	margin-top: 15px;
+}
+.nav-stacked>li {
+	background-color: rgba(24, 24, 24, 0.45);
+}
+.nav-stacked a{
+	color: #fff;
+	font-weight: bold;
+}
+.nav>li>a:focus, .nav>li>a:hover, .category-selected {
+	background-color: rgba(23, 22, 22, 1);
 }
 
 /* Calculo del footer*/
