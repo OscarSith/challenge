@@ -133,6 +133,12 @@ article {
 .nav>li>a:focus, .nav>li>a:hover, .category-selected {
 	background-color: rgba(23, 22, 22, 1);
 }
+footer .fa-stack {
+	margin-right: 5px
+}
+footer .pull-left p {
+	margin-top: 5px
+}
 
 /* Calculo del footer*/
 #wrap {
