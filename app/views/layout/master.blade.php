@@ -14,7 +14,7 @@
 			<div class="hidden-xs" id="space-top"></div>
 			<header class="col-sm-12 col-sm-offset-0 col-md-7 col-md-offset-5 col-lg-6 col-lg-offset-6">
 				<div class="row text-center">
-					<a href="/">
+					<a href="{{ route('home') }}">
 						<img src="{{ asset('img/logo_challenge.png') }}" alt="Logo Challenge">
 					</a>
 				</div>
@@ -22,19 +22,19 @@
 				<nav>
 					<ul class="nav nav-pills nav-justified">
 						<li {{ $background === 'home' ? 'class="nav-active"' :''}}>
-							<a href="/">INICIO</a>
+							<a href="{{ route('home') }}">INICIO</a>
 						</li>
 						<li {{ $background === 'us' ? 'class="nav-active"' :''}}>
-							<a href="nosotros">NOSOTROS</a>
+							<a href="{{ route('nosotros') }}">NOSOTROS</a>
 						</li>
 						<li {{ $background === 'product' ? 'class="nav-active"' :''}}>
 							<a href="{{ route('productos', array('novedades', 1))}}">PRODUCTOS</a>
 						</li>
 						<li {{ $background === 'events' ? 'class="nav-active"' :''}}>
-							<a href="eventos">EVENTOS</a>
+							<a href="{{ route('evento') }}">EVENTOS</a>
 						</li>
 						<li {{ $background === 'contact' ? 'class="nav-active"' :''}}>
-							<a href="contacto" class="mr0">CONTACTO</a>
+							<a href="{{ route('contacto') }}" class="mr0">CONTACTO</a>
 						</li>
 					</ul>
 				</nav>

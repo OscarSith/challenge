@@ -1,9 +1,8 @@
 <?php
 Route::get('/', array('as' => 'home', 'uses' => 'HomeController@home'));
-Route::get('nosotros', 'HomeController@aboutUs');
-Route::get('eventos', 'HomeController@events');
-Route::get('contacto', 'HomeController@contact');
-Route::get('productos', 'HomeController@products');
+Route::get('nosotros', array('as' => 'nosotros', 'uses' => 'HomeController@aboutUs'));
+Route::get('evento', array('as' => 'evento', 'uses' => 'HomeController@events'));
+Route::get('contacto', array('as' => 'contacto', 'uses' => 'HomeController@contact'));
 Route::get('productos/{name}-{id}', array('as' => 'productos', 'uses' => 'HomeController@products'));
 Route::post('selected-product', array('as' => 'addToCart', 'uses' => 'HomeController@addProductToCart'));
 Route::post('remove-selected-product', array('as' => 'removeToCart', 'uses' => 'HomeController@removeToCart'));
