@@ -33,7 +33,7 @@
 									<button class="btn btn-xs btn-link btn-cha mb5 btn-cotizar">
 										{{ $cancel ? 'Cancelar' : 'Agregar' }}
 									</button>
-									<a href="contacto" class="btn btn-xs btn-link btn-cha mb5 pull-right visible-xs visible-sm btn-cotizar">Cotizar</a>
+									<a href="{{ route('contacto') }}" class="btn btn-xs btn-link btn-cha mb5 pull-right visible-xs visible-sm btn-cotizar">Cotizar</a>
 									<dl>
 										<dt>Codigo: <span>{{ $rec->codigo }}</span></dt>
 										<dt>Nombre:</dt>
