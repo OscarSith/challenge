@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author" content="Oscar Larriega">
-	<title>Challenge</title>
+	<title>Challenge Eventos</title>
 	<link href="{{ asset('css/main.min.css') }}" rel="stylesheet">
 </head>
 <body class="cover {{ $background }}">
@@ -18,7 +18,7 @@
 						<img src="{{ asset('img/logo_challenge.png') }}" alt="Logo Challenge">
 					</a>
 				</div>
-				<h1 class="text-center">CHALLENGER PERÚ</h1>
+				<h1 class="text-center">CHALLENGER EVENTOS</h1>
 				<nav>
 					<ul class="nav nav-pills nav-justified">
 						<li {{ $background === 'home' ? 'class="nav-active"' :''}}>
@@ -68,7 +68,7 @@
 									</div>
 									<div class="col-sm-8 col-sm-offset-2 text-left">
 										<div class="text-center">
-											<a class="btn btn-cha btn-lg mb20" href="contacto">Cotizar</a>
+											<a class="btn btn-cha btn-lg mb20" href="contacto">COTIZAR</a>
 										</div>
 										<p>
 											<strong>Código: </strong><span id="content-cod"></span>
@@ -86,6 +86,88 @@
 					</div>
 					<div class="visible-xs visible-sm col-sm-6 col-sm-offset-3">
 						{{ Form::select('categoria_id', $arr, $path[1], array('class' => 'form-control mb20', 'id' => 'cat_id')) }}
+					</div>
+					<div class="col-sm-12 col-md-7 col-lg-6">
+				@elseif($background === 'events')
+					<div class="col-md-5 col-lg-6">
+						<div id="main-events">
+							<h5 class="text-center">FUEGOS ARTIFICIALES</h5>
+							<div id="carousel-eventos" class="carousel slide" data-ride="carousel">
+								<ol class="carousel-indicators hidden-xs">
+									<li data-target="#carousel-eventos" data-slide-to="0" class="active"></li>
+									<li data-target="#carousel-eventos" data-slide-to="1"></li>
+									<li data-target="#carousel-eventos" data-slide-to="2"></li>
+									<li data-target="#carousel-eventos" data-slide-to="3"></li>
+									<li data-target="#carousel-eventos" data-slide-to="4"></li>
+									<li data-target="#carousel-eventos" data-slide-to="5"></li>
+									<li data-target="#carousel-eventos" data-slide-to="6"></li>
+									<li data-target="#carousel-eventos" data-slide-to="7"></li>
+									<li data-target="#carousel-eventos" data-slide-to="8"></li>
+									<li data-target="#carousel-eventos" data-slide-to="9"></li>
+									<li data-target="#carousel-eventos" data-slide-to="10"></li>
+									<li data-target="#carousel-eventos" data-slide-to="11"></li>
+									<li data-target="#carousel-eventos" data-slide-to="12"></li>
+									<li data-target="#carousel-eventos" data-slide-to="13"></li>
+									<li data-target="#carousel-eventos" data-slide-to="14"></li>
+									<li data-target="#carousel-eventos" data-slide-to="15"></li>
+								</ol>
+								<div class="carousel-inner" role="listbox">
+									<div class="item active">
+										<img src="img/fotos_eventos/Foto_1.jpg" alt="">
+									</div>
+									<div class="item">
+										<img src="img/fotos_eventos/Foto_2.jpg" alt="">
+									</div>
+									<div class="item">
+										<img src="img/fotos_eventos/Foto_3.jpg" alt="">
+									</div>
+									<div class="item">
+										<img src="img/fotos_eventos/Foto_4.jpg" alt="">
+									</div>
+									<div class="item">
+										<img src="img/fotos_eventos/Foto_5.jpg" alt="">
+									</div>
+									<div class="item">
+										<img src="img/fotos_eventos/Foto_6.jpg" alt="">
+									</div>
+									<div class="item">
+										<img src="img/fotos_eventos/Foto_7.jpg" alt="">
+									</div>
+									<div class="item">
+										<img src="img/fotos_eventos/Foto_8.jpg" alt="">
+									</div>
+									<div class="item">
+										<img src="img/fotos_eventos/Foto_9.jpg" alt="">
+									</div>
+									<div class="item">
+										<img src="img/fotos_eventos/Foto_10.jpg" alt="">
+									</div>
+									<div class="item">
+										<img src="img/fotos_eventos/Foto_11.jpg" alt="">
+									</div>
+									<div class="item">
+										<img src="img/fotos_eventos/Foto_12.jpg" alt="">
+									</div>
+									<div class="item">
+										<img src="img/fotos_eventos/Foto_13.jpg" alt="">
+									</div>
+									<div class="item">
+										<img src="img/fotos_eventos/Foto_14.jpg" alt="">
+									</div>
+									<div class="item">
+										<img src="img/fotos_eventos/Foto_15.jpg" alt="">
+									</div>
+								</div>
+								<a class="left carousel-control" href="#carousel-eventos" role="button" data-slide="prev">
+									<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+									<span class="sr-only">Previous</span>
+								</a>
+								<a class="right carousel-control" href="#carousel-eventos" role="button" data-slide="next">
+									<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+									<span class="sr-only">Next</span>
+								</a>
+							</div>
+						</div>
 					</div>
 					<div class="col-sm-12 col-md-7 col-lg-6">
 				@else

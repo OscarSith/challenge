@@ -1,7 +1,14 @@
+@font-face {
+	font-family: 'Myriad Pro Semibold';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Myriad Pro Semibold'), url('../fonts/MYRIADPRO-SEMIBOLD.woff') format('woff');
+}
 body {
 	background-repeat: no-repeat;
 	color: #fff;
-	font-size: 13px
+	font-size: 14px;
+	font-family: 'Myriad Pro Semibold';
 }
 .home {
 	background-image: url('../img/bg_home.jpg');
@@ -20,7 +27,7 @@ body {
 }
 header h1 {
 	border-top: 2px solid #FFF;
-	letter-spacing: .38em;
+	letter-spacing: .29em;
 	padding-top: 15px;
 }
 nav a {
@@ -62,7 +69,7 @@ section {
 }
 article {
 	padding: 15px;
-	background-color: rgba(18, 18, 18, 0.69);
+	background-color: rgba(18, 18, 18, 0.79);
 	margin-bottom: 20px;
 }
 .form-control {
@@ -75,10 +82,10 @@ article {
 	background-image: none !important;
 	width: 6%;
 }
-.carousel-control.left {
+#carousel-example-generic .carousel-control.left {
 	left: -7.5%;
 }
-.carousel-control.right {
+#carousel-example-generic .carousel-control.right {
 	right: -7.5%
 }
 #main-product {
@@ -88,7 +95,15 @@ article {
 	margin: 15px 25px;
 	background-color: rgba(0, 0, 0, 0.6);
 	padding: 15px;
-	font-size: 1.4em;
+	font-size: 1.2em;
+}
+#main-events {
+	padding: 14px 46px;
+	background-color: rgba(18, 18, 18, 0.79);
+	margin: 0 35px 20px;
+}
+#main-events h5 {
+	margin-top: 0;
 }
 #content-img {
 	background-color: #fff;
@@ -130,7 +145,10 @@ article {
 	color: #fff;
 	font-weight: bold;
 }
-.nav>li>a:focus, .nav>li>a:hover, .category-selected {
+.nav-stacked>li>a:hover {
+	color: #fff;
+}
+.nav-stacked>li>a:focus, .nav-stacked>li>a:hover, .category-selected {
 	background-color: rgba(23, 22, 22, 1);
 }
 footer .fa-stack {
@@ -192,11 +210,20 @@ footer .yt:hover .fa-stack-2x{
 	#content-img {
 		height: 250px;
 	}
+	#main-events {
+		padding: 14px 20px;
+		margin: 0 6px 20px;
+	}
 }
 @media (max-width: 1050px) {
 	#content-img {
 		height: 215px;
 	}
+}
+@media (max-width: 992px) {
+	#main-events {
+		margin: 0 0 20px;
+    }
 }
 
 /* % COLUMNAS */
