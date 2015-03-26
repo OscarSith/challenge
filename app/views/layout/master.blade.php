@@ -68,7 +68,7 @@
 									</div>
 									<div class="col-sm-8 col-sm-offset-2 text-left">
 										<div class="text-center">
-											<a class="btn btn-cha btn-lg mb20" href="contacto">COTIZAR</a>
+											<a class="btn btn-cha btn-lg mb20" href="{{ route('contacto') }}">COTIZAR</a>
 										</div>
 										<p>
 											<strong>Código: </strong><span id="content-cod"></span>
