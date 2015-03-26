@@ -191,7 +191,7 @@
 					<i class="fa fa-square fa-stack-2x"></i>
 					<i class="fa fa-youtube fa-stack-1x"></i>
 				</a>
-				<p class="mb0 pull-left"><i class="fa fa-copyright"></i> Copyright 2015</p>
+				<p class="mb0 pull-left"><i class="fa fa-copyright"></i> Copyright {{ (new DateTime())->format('Y')}}</p>
 			</div>
 			<small class="pull-right">
 				<em>Miembro de la asociación de Importadores, Fabricantes y<br>Comercializadores de Productos Pirotécnicos del Perú.</em>
