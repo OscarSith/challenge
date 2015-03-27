@@ -21,7 +21,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="admin">Challenge</a>
+                <a class="navbar-brand" href="{{ route('admin', 1) }}">Challenge Eventos</a>
             </div>
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
@@ -40,7 +40,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="admin"><i class="fa fa-fw fa-dashboard"></i> Inicio</a>
+                        <a href="{{ route('admin', 1) }}"><i class="fa fa-fw fa-dashboard"></i> Inicio</a>
                     </li>
                     <li>
                         <a href="#" data-toggle="modal" data-target="#modal-product">
@@ -106,7 +106,11 @@
     <script src="js/bootstrap.min.js"></script>
     <script>
         $('#btn-save').on('click', function() {
-            $(this).parent().prev().find('form').submit();
+            var $this = $(this),
+                $form = $this.parent().prev().find('form');
+
+            $form.submit();
+            $this.prop('disabled', true).text('Subiendo imagen, espere por favor...');
         });
         $('#cbo-categoria').on('change', function(e) {
             var value = $(this).val(),
