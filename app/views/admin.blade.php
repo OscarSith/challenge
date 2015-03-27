@@ -1,7 +1,14 @@
 @extends('layout.admin_master')
 
 @section('content')
-	<h2 class="page-header">Listado de productos</h2>
+	<h2 class="page-header">
+		<div class="row">
+			<div class="col-sm-6 col-md-5">Listado de productos</div>
+			<div class="col-sm-3">
+				{{ Form::select('categoria_id', $dataCategorias, $id, array('class' => 'form-control', 'id' => 'cbo-categoria')) }}
+			</div>
+		</div>
+	</h2>
 	@if(Session::has('error'))
 	<div class="alert alert-danger alert-dismissible fade in" role="alert">
 		{{ Session::get('error') }}

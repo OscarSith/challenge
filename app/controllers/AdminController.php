@@ -2,12 +2,12 @@
 
 class AdminController extends BaseController {
 
-	public function admin()
+	public function admin($id)
 	{
 		$Product = new Product();
 		$Categoria = new Categoria();
 
-		$productos = $Product->get(true);
+		$productos = $Product->get(true, $id);
 		$categorias = $Categoria->get();
 
 		$dataCategorias = array();
@@ -15,7 +15,7 @@ class AdminController extends BaseController {
 			$dataCategorias[$key['id']] = $key['nombre'];
 		}
 		$title = 'Challenge - Admin';
-		return View::make('admin', compact('title', 'productos', 'dataCategorias'));
+		return View::make('admin', compact('title', 'productos', 'dataCategorias', 'id'));
 	}
 
 	public function add() {

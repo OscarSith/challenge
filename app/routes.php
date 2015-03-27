@@ -20,7 +20,7 @@ Route::group(array('before' => 'guest'), function($route){
 
 Route::group(array('before' => 'auth'), function($route) {
 
-	$route->get('admin', 'AdminController@admin');
+	$route->get('admin-{id}', array('as' => 'admin','uses' => 'AdminController@admin'));
 	$route->post('add', array('as' => 'addProduct', 'uses' => 'AdminController@add'));
 	$route->get('signout', array('as' => 'signout', 'uses' => 'AuthController@signout'));
 	$route->delete('remove-product', 'AdminController@remove');

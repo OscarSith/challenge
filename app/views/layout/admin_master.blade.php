@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Oscar Larriega <larriega@gmail.com>">
 
     <title>{{ $title }}</title>
     <!-- Custom CSS -->
@@ -16,9 +13,7 @@
 
 <body>
     <div id="wrapper">
-        <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -28,7 +23,6 @@
                 </button>
                 <a class="navbar-brand" href="admin">Challenge</a>
             </div>
-            <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
                 </li>
@@ -43,7 +37,6 @@
                     </ul>
                 </li>
             </ul>
-            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
@@ -56,7 +49,6 @@
                     </li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
         </nav>
         <div id="page-wrapper">
             <div class="container-fluid">
@@ -111,11 +103,19 @@
         </div>
     </div>
     <script src="js/jquery.min.js"></script>
-    <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <script>
         $('#btn-save').on('click', function() {
             $(this).parent().prev().find('form').submit();
+        });
+        $('#cbo-categoria').on('change', function(e) {
+            var value = $(this).val(),
+                url = location.href;
+
+            url = url.split('-');
+            url.pop();
+            url.push(value);
+            location.href = url.join('-');
         });
     </script>
 </body>

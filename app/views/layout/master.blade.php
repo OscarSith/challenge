@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="description" content="Se especializada en la realización de espectáculos de fuegos artificiales y efectos especiales diurnos y nocturnos a nivel nacional, contamos con más de veinte años de experiencia profesional">
 	<meta name="author" content="Oscar Larriega">
 	<title>Challenge Eventos</title>
 	<link href="{{ asset('css/main.min.css') }}" rel="stylesheet">

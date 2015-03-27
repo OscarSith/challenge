@@ -19,7 +19,7 @@ class AuthController extends BaseController
 
 		if (Auth::attempt($credentials, $data['remember']))
 		{
-			$back = Redirect::intended('admin');
+			$back = Redirect::intended('admin-1');
 		}
 		else
 		{
