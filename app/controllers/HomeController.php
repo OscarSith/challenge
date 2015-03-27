@@ -27,7 +27,7 @@ class HomeController extends BaseController {
 		if(Session::has('product')) {
 			$message = "\n\n\nProductos Seleccionados\n------------------------------\n";
 			foreach(Session::get('product') as $rec) {
-				$message .= $rec['name']."\n";
+				$message .= $rec['codigo'].' -> '.$rec['name']."\n";
 			}
 		}
 		return View::make('contacto', compact('background', 'message'));
@@ -47,7 +47,7 @@ class HomeController extends BaseController {
 
 	public function addProductToCart()
 	{
-		Session::push('product', Input::only('id', 'name'));
+		Session::push('product', Input::only('id', 'name', 'codigo'));
 		return Response::json(array('type' => 'add'));
 	}
 
@@ -79,7 +79,7 @@ class HomeController extends BaseController {
 		$data['message_send'] = nl2br($data['message_send']);
 
 		Mail::send('emails.email_contact', $data, function($message) {
-			$message->to('larriega@gmail.com', 'Oscar Larriega')->subject('Cotización enviada desde la web de Challenge');
+			$message->to('challengerperu@gmail.com', 'Challenge Perú')->subject('Cotización enviada desde la web de Challenge');
 		});
 		Session::forget('product');
 		return Redirect::back()->with('success', 'Mensaje enviado exitosamente.');
