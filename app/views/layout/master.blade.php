@@ -91,7 +91,7 @@
 				@elseif($background === 'events')
 					<div class="col-md-5 col-lg-6">
 						<div id="main-events">
-							<h5 class="text-center">FUEGOS ARTIFICIALES</h5>
+							<h5 class="text-center">ARMADOS</h5>
 							<div id="carousel-eventos" class="carousel slide" data-ride="carousel">
 								<ol class="carousel-indicators hidden-xs">
 									<li data-target="#carousel-eventos" data-slide-to="0" class="active"></li>
@@ -209,7 +209,8 @@
 			});
 		});
 
-		var $products = $('#content-products');
+		var $products = $('#content-products'), 
+			$events = $('#main-events');
 		if ($products.length) {
 			var id = 0;
 			$products.on('mouseover', '.thumbnail', function() {
@@ -264,6 +265,38 @@
 				location.href = url;
 			});
 		}
+		if ($events.length) {
+			$('#carousel-eventos').on('slid.bs.carousel', function (e) {
+				var data = $(this).data('bs.carousel'),
+					slide = parseInt(data.$indicators.find('.active').data('slide-to')),
+					title = '';
+
+				switch(slide) {
+					case 0:
+					case 1:
+					case 2:
+					case 3:
+						title = 'ARMADOS';
+					break;
+					case 4:
+					case 5:
+					case 6:
+					case 7:
+					case 8:
+					case 9:
+					case 10:
+						title = 'FUEGOS ARTIFICIALES';
+					break;
+					case 11:
+					case 12:
+					case 13:
+					case 14:
+						title = 'SEGURIDAD';
+					break;
+				}
+				$('#main-events>h5').text(title);
+			});
+		};
 	</script>
 </body>
 </html>
