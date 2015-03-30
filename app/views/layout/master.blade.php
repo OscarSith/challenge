@@ -85,7 +85,7 @@
 						</div>
 					</div>
 					<div class="visible-xs visible-sm col-sm-6 col-sm-offset-3">
-						{{ Form::select('categoria_id', $arr, $path[1], array('class' => 'form-control mb20', 'id' => 'cat_id')) }}
+						{{ Form::select('categoria_id', $arr, $path[1], array('class' => 'form-control mb20', 'id' => 'cat_id', 'style' => 'background-color:#fff !important;color:#333')) }}
 					</div>
 					<div class="col-sm-12 col-md-7 col-lg-6">
 				@elseif($background === 'events')
