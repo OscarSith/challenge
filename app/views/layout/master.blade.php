@@ -9,17 +9,21 @@
 	<link href="{{ asset('css/main.min.css') }}" rel="stylesheet">
 </head>
 <body class="cover {{ $background }}">
+	<video id="video" autoplay="autoplay" preload="auto" loop="loop">
+		<source src="{{ asset('') }}/Secuencia_01.mp4" type="video/mp4"></source>
+		<!--<source src="/videoplaneta.ogv" type="video/ogv"></source>-->
+	</video>
 	<div class="container" id="wrap">
 		<div class="row">
 			<div class="hidden-xs" id="space-top"></div>
 			<header class="col-sm-12 col-sm-offset-0 col-md-7 col-md-offset-5 col-lg-6 col-lg-offset-6">
 				<div class="row text-center">
-					<a href="{{ route('home') }}">
-						<img src="{{ asset('img/logo_challenge.png') }}" alt="Logo Challenge">
+					<a href="{{ route('home') }}" class="wow pulse">
+						<img src="{{ asset('img/logo_challenge.png') }}" alt="Logo Challenge" id="logo">
 					</a>
 				</div>
-				<h1 class="text-center">CHALLENGER EVENTOS</h1>
-				<nav>
+				<h1 class="text-center wow slideInRight">CHALLENGER EVENTOS</h1>
+				<nav class="wow fadeInDown">
 					<ul class="nav nav-pills nav-justified">
 						<li {{ $background === 'home' ? 'class="nav-active"' :''}}>
 							<a href="{{ route('home') }}">INICIO</a>
@@ -45,7 +49,7 @@
 				@if($background === 'product')
 					<div class="col-md-5 col-lg-6 hidden-xs hidden-sm" id="main-product">
 						<div class="row">
-							<div class="col-sm-4">
+							<div class="col-sm-4 wow slideInLeft animated">
 								<?php
 								$path = explode('-', $_SERVER['REQUEST_URI']);
 								$arr = array();
@@ -61,10 +65,10 @@
 								@endforeach
 								</ul>
 							</div>
-							<div class="col-sm-8">
+							<div class="col-sm-8" data-wow-duration="3s">
 								<div id="content-product" class="row">
 									<div id="content-img" class="mb20 text-center">
-										<img src="#" alt="" class="img-responsive center-block">
+										<img src="#" alt="" class="img-responsive center-block wow bounceIn">
 									</div>
 									<div class="col-sm-8 col-sm-offset-2 text-left">
 										<div class="text-center">
@@ -89,84 +93,25 @@
 					</div>
 					<div class="col-sm-12 col-md-7 col-lg-6">
 				@elseif($background === 'events')
-					<div class="col-md-5 col-lg-6">
-						<div id="main-events">
-							<h5 class="text-center">ARMADOS</h5>
-							<div id="carousel-eventos" class="carousel slide" data-ride="carousel">
-								<ol class="carousel-indicators hidden-xs">
-									<li data-target="#carousel-eventos" data-slide-to="0" class="active"></li>
-									<li data-target="#carousel-eventos" data-slide-to="1"></li>
-									<li data-target="#carousel-eventos" data-slide-to="2"></li>
-									<li data-target="#carousel-eventos" data-slide-to="3"></li>
-									<li data-target="#carousel-eventos" data-slide-to="4"></li>
-									<li data-target="#carousel-eventos" data-slide-to="5"></li>
-									<li data-target="#carousel-eventos" data-slide-to="6"></li>
-									<li data-target="#carousel-eventos" data-slide-to="7"></li>
-									<li data-target="#carousel-eventos" data-slide-to="8"></li>
-									<li data-target="#carousel-eventos" data-slide-to="9"></li>
-									<li data-target="#carousel-eventos" data-slide-to="10"></li>
-									<li data-target="#carousel-eventos" data-slide-to="11"></li>
-									<li data-target="#carousel-eventos" data-slide-to="12"></li>
-									<li data-target="#carousel-eventos" data-slide-to="13"></li>
-									<li data-target="#carousel-eventos" data-slide-to="14"></li>
-									<li data-target="#carousel-eventos" data-slide-to="15"></li>
-								</ol>
-								<div class="carousel-inner" role="listbox">
-									<div class="item active">
-										<img src="img/fotos_eventos/Foto_1.jpg" alt="">
-									</div>
-									<div class="item">
-										<img src="img/fotos_eventos/Foto_2.jpg" alt="">
-									</div>
-									<div class="item">
-										<img src="img/fotos_eventos/Foto_3.jpg" alt="">
-									</div>
-									<div class="item">
-										<img src="img/fotos_eventos/Foto_4.jpg" alt="">
-									</div>
-									<div class="item">
-										<img src="img/fotos_eventos/Foto_5.jpg" alt="">
-									</div>
-									<div class="item">
-										<img src="img/fotos_eventos/Foto_6.jpg" alt="">
-									</div>
-									<div class="item">
-										<img src="img/fotos_eventos/Foto_7.jpg" alt="">
-									</div>
-									<div class="item">
-										<img src="img/fotos_eventos/Foto_8.jpg" alt="">
-									</div>
-									<div class="item">
-										<img src="img/fotos_eventos/Foto_9.jpg" alt="">
-									</div>
-									<div class="item">
-										<img src="img/fotos_eventos/Foto_10.jpg" alt="">
-									</div>
-									<div class="item">
-										<img src="img/fotos_eventos/Foto_11.jpg" alt="">
-									</div>
-									<div class="item">
-										<img src="img/fotos_eventos/Foto_12.jpg" alt="">
-									</div>
-									<div class="item">
-										<img src="img/fotos_eventos/Foto_13.jpg" alt="">
-									</div>
-									<div class="item">
-										<img src="img/fotos_eventos/Foto_14.jpg" alt="">
-									</div>
-									<div class="item">
-										<img src="img/fotos_eventos/Foto_15.jpg" alt="">
-									</div>
-								</div>
-								<a class="left carousel-control" href="#carousel-eventos" role="button" data-slide="prev">
-									<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-									<span class="sr-only">Previous</span>
-								</a>
-								<a class="right carousel-control" href="#carousel-eventos" role="button" data-slide="next">
-									<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-									<span class="sr-only">Next</span>
-								</a>
-							</div>
+					<div class="col-sm-8 col-md-2 col-sm-offset-2 col-md-offset-3 col-lg-offset-4">
+						<ul class="nav nav-stacked wow slideInLeft animated" role="tablist" id="tablista">
+							<li role="presentation" class="active">
+								<a href="#celebrations">Celebraciones</a>
+							</li>
+							<li role="presentation">
+								<a href="#fuegos-artificiales">Fuegos Artificiales</a>
+							</li>
+							<li role="presentation">
+								<a href="#armados">Armados</a>
+							</li>
+							<li role="presentation">
+								<a href="#seguridad">Seguridad</a>
+							</li>
+							<li role="presentation">
+								<a href="#videos">Video</a>
+							</li>
+						</ul>
+						<div id="main-events" class="hidden">
 						</div>
 					</div>
 					<div class="col-sm-12 col-md-7 col-lg-6">
@@ -200,7 +145,16 @@
 	</footer>
 	<script src="{{ asset('js/jquery.min.js') }}"></script>
 	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('bower_components/wow/dist/wow.js') }}"></script>
 	<script>
+		$('#logo').on('mouseover mouseleave', function(e){
+			var $this = $(this);
+			if (e.type === 'mouseover') {
+				$this.attr('src', '{{ asset('img') }}/logo_challenge_alt.png');
+			} else {
+				$this.attr('src', '{{ asset('img') }}/logo_challenge.png');
+			}
+		});
 		$('#btn-show-more-home').on('click', function(e) {
 			e.preventDefault();
 			var $this = $(this);
@@ -221,7 +175,8 @@
 					var $form = $this.find('form');
 					$this.closest('.row').children('.product-selected:not(.pselected)').removeClass('product-selected');
 					$this.parent().addClass('product-selected');
-					$('#content-img img').attr('src', '{{ asset('') }}img/productos/'+$this.children().data('img'));
+					var img = '<img src="{{ asset('img') }}/productos/'+$this.children().data('img')+'" alt="" class="img-responsive center-block wow bounceIn animated" data-wow-duration=".5s">';
+					$('#content-img').html(img);
 					$('#content-cod').text($form.find('span').first().text().trim());
 					$('#content-name').text($form.find('dd').text().trim());
 					$('#content-pack').text($form.find('span').last().text().trim());
@@ -266,37 +221,54 @@
 			});
 		}
 		if ($events.length) {
-			$('#carousel-eventos').on('slid.bs.carousel', function (e) {
-				var data = $(this).data('bs.carousel'),
-					slide = parseInt(data.$indicators.find('.active').data('slide-to')),
-					title = '';
-
-				switch(slide) {
-					case 0:
-					case 1:
-					case 2:
-					case 3:
-						title = 'ARMADOS';
-					break;
-					case 4:
-					case 5:
-					case 6:
-					case 7:
-					case 8:
-					case 9:
-					case 10:
-						title = 'FUEGOS ARTIFICIALES';
-					break;
-					case 11:
-					case 12:
-					case 13:
-					case 14:
-						title = 'SEGURIDAD';
-					break;
-				}
-				$('#main-events>h5').text(title);
+			$('#tablista a').click(function (e) {
+				e.preventDefault()
+				$(this).tab('show')
+			});
+			var $modal = $('#modalVideos');
+			$modal.on('show.bs.modal', function(e) {
+				var $target = $(e.relatedTarget),
+					title = $target.data('title'),
+					src = $target.data('src'),
+					modal = $(this);
+				modal.find('.modal-title').text(title);
+				modal.find('#content-video').html('<iframe width="560" height="315" src="https://www.youtube.com/embed/'+src+'?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>');
+			});
+			$modal.on('hidden.bs.modal', function(e) {
+				$(this).find('#content-video').empty();
 			});
 		};
+		function bgadj(){
+			var videoActualWidth = video.getBoundingClientRect().width;
+			var videoActualHeight = video.getBoundingClientRect().height;
+
+			var ratio =  videoActualWidth / videoActualHeight;
+
+			if ((window.innerWidth / window.innerHeight) < ratio) {
+
+				video.setAttribute("style", "width: auto");
+				video.setAttribute("style", "height: 100%");
+
+				// si el vídeo es mas ancho que la ventana lo centro. Esta parte es opcional
+				if (videoActualWidth > window.innerWidth){
+
+					var ajuste = (window.innerWidth - videoActualWidth)/2;
+
+					video.setAttribute("style", "left:"+ajuste+"px");
+				}
+			} else {
+				video.setAttribute("style", "width: 100%");
+				video.setAttribute("style", "height: auto");
+				video.setAttribute("style", "left: 0");
+			}
+		}
+
+		// vuelvo a llamar a la función  bgadj() al redimensionar la ventana
+		window.onresize = function() {
+			bgadj();
+		}
+
+		new WOW().init();
 	</script>
 </body>
 </html>

@@ -97,17 +97,9 @@ article {
 	padding: 15px;
 	font-size: 1.2em;
 }
-#main-events {
-	padding: 14px 46px;
-	background-color: rgba(18, 18, 18, 0.79);
-	margin: 0 35px 20px;
-}
-#main-events h5 {
-	margin-top: 0;
-}
 #content-img {
 	background-color: #fff;
-	height: 290px;
+	height: 260px;
 	overflow: hidden;
 }
 .thumbnail {
@@ -136,6 +128,7 @@ article {
 	background-color: rgba(0,0,0,.72);
 }
 .nav-stacked {
+	margin-bottom: 15px;
 	margin-top: 15px;
 }
 .nav-stacked>li {
@@ -148,14 +141,31 @@ article {
 .nav-stacked>li>a:hover {
 	color: #fff;
 }
-.nav-stacked>li>a:focus, .nav-stacked>li>a:hover, .category-selected {
+.nav-stacked>li>a:focus, .nav-stacked>li>a:hover, .category-selected, #tablista li.active {
 	background-color: rgba(23, 22, 22, 1);
+}
+#videos .col-sm-4 {
+	margin-bottom: 15px
+}
+#videos .col-sm-4:hover {
+	cursor: pointer;
+	opacity: .4;
+}
+.modal-title {
+	color: #333;
 }
 footer .fa-stack {
 	margin-right: 5px
 }
 footer .pull-left p {
 	margin-top: 5px
+}
+#video{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	overflow: hidden;
 }
 
 /* Calculo del footer*/
@@ -210,20 +220,11 @@ footer .yt:hover .fa-stack-2x{
 	#content-img {
 		height: 250px;
 	}
-	#main-events {
-		padding: 14px 20px;
-		margin: 0 6px 20px;
-	}
 }
 @media (max-width: 1050px) {
 	#content-img {
 		height: 215px;
 	}
-}
-@media (max-width: 992px) {
-	#main-events {
-		margin: 0 0 20px;
-    }
 }
 
 /* % COLUMNAS */

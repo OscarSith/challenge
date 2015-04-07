@@ -18,6 +18,7 @@ module.exports = function(grunt) {
 					'css/main.min.css': [
 						'bower_components/bootstrap/dist/css/bootstrap.min.css',
 						'css/font-awesome.min.css',
+						'bower_components/wow/css/libs/animate.css',
 						'css/main.css'
 					]
 				}
