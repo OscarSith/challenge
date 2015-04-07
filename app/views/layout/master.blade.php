@@ -145,7 +145,7 @@
 	</footer>
 	<script src="{{ asset('js/jquery.min.js') }}"></script>
 	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-	<script src="{{ asset('bower_components/wow/dist/wow.js') }}"></script>
+	<script src="{{ asset('js/wow.min.js') }}"></script>
 	<script>
 		$('#logo').on('mouseover mouseleave', function(e){
 			var $this = $(this);
