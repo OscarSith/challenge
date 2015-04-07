@@ -243,25 +243,24 @@
 			var videoActualHeight = video.getBoundingClientRect().height;
 
 			var ratio =  videoActualWidth / videoActualHeight;
+			var $video = $(video);
 
 			if ((window.innerWidth / window.innerHeight) < ratio) {
 
-				video.setAttribute("style", "width: auto");
-				video.setAttribute("style", "height: 100%");
+				$video.css({'width': 'auto', 'height': '100%'});
 
 				// si el vídeo es mas ancho que la ventana lo centro. Esta parte es opcional
 				if (videoActualWidth > window.innerWidth){
 
 					var ajuste = (window.innerWidth - videoActualWidth)/2;
 
-					video.setAttribute("style", "left:"+ajuste+"px");
+					$video.css('left', ajuste+"px");
 				}
 			} else {
-				video.setAttribute("style", "width: 100%");
-				video.setAttribute("style", "height: auto");
-				video.setAttribute("style", "left: 0");
+				$video.css({'width': '100%', 'height': 'auto', 'left': '0'});
 			}
 		}
+		bgadj();
 
 		// vuelvo a llamar a la función  bgadj() al redimensionar la ventana
 		window.onresize = function() {
