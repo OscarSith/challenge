@@ -98,19 +98,19 @@
 					@elseif($background === 'events')
 						<div class="col-sm-8 col-md-2 col-sm-offset-2 col-md-offset-3 col-lg-offset-4">
 							<ul class="nav nav-stacked wow slideInLeft animated" role="tablist" id="tablista">
-								<li role="presentation" class="active" style="background-color:#FDFD64">
-									<a href="#celebrations" style="color:#333">Celebraciones</a>
+								<li role="presentation" class="active">
+									<a href="#celebrations">Celebraciones</a>
 								</li>
-								<li role="presentation" style="background-color:#1EB9E8">
+								<li role="presentation">
 									<a href="#fuegos-artificiales">Fuegos Artificiales</a>
 								</li>
-								<li role="presentation" style="background-color:red">
+								<li role="presentation">
 									<a href="#armados">Armados</a>
 								</li>
-								<li role="presentation" style="background-color:purple">
+								<li role="presentation">
 									<a href="#seguridad">Seguridad</a>
 								</li>
-								<li role="presentation" style="background-color:green">
+								<li role="presentation">
 									<a href="#videos">Video</a>
 								</li>
 							</ul>
