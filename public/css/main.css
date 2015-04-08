@@ -147,6 +147,7 @@ header .nav>li>a:focus, header .nav>li>a:hover, header .nav-active a, header nav
 }
 .nav-stacked>li>a:focus, .nav-stacked>li>a:hover, .category-selected, #tablista li.active {
 	background-color: rgba(23, 22, 22, 1);
+	color: #fff !important;
 }
 #videos .col-sm-4 {
 	margin-bottom: 15px

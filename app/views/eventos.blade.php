@@ -2,14 +2,14 @@
 
 @section('content')
 	<article class="tab-content">
-		<div role="tabpanel" id="celebrations" class="tab-pane fade in active wow bounceInUp animated">
-			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+		<div role="tabpanel" id="celebrations" class="tab-pane fade in active">
+			<div id="carousel-example-generic" class="carousel slide wow bounceInUp" data-ride="carousel">
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
 						<div class="row">
 							<div class="col-sm-6">
 								<h3 class="text-right">¡Crea momentos extraordinarios!</h3>
-								<p class="text-justify">En todo espectáculo, las personas desean sentir y presencia actos extraordinarios. Challenger eventos complementa este pectáculo creando un show de fuegos artificialespara el deleite del púplico, gracias a que cuenta con tecnología de última generación para un óptimo control y desarrollo de este.</p>
+								<p class="text-justify">En todo espectáculo, las personas desean sentir y presencia actos extraordinarios. Challenger eventos complementa este pectáculo creando un show de fuegos artificiales para el deleite del púplico, gracias a que cuenta con tecnología de última generación para un óptimo control y desarrollo de este.</p>
 							</div>
 							<div class="col-sm-6">
 								<img src="img/eventos/flyer01.jpg" alt="Momentos Extraordinarios" class="img-responsive center-block">
@@ -100,6 +100,12 @@
 					<div class="item">
 						<img src="img/fotos_eventos/Foto_8.jpg" alt="">
 					</div>
+					<div class="item">
+						<img src="img/fotos_eventos/Foto_10.jpg" alt="">
+					</div>
+					<div class="item">
+						<img src="img/fotos_eventos/Foto_11.jpg" alt="">
+					</div>
 				</div>
 				<a class="left carousel-control" href="#carousel-fuegos-art" role="button" data-slide="prev">
 					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -140,13 +146,7 @@
 		<div role="tabpanel" id="seguridad" class="tab-pane fade">
 			<div id="carousel-seguridad" class="carousel slide" data-ride="carousel">
 				<div class="carousel-inner" role="listbox">
-					<div class="item">
-						<img src="img/fotos_eventos/Foto_10.jpg" alt="">
-					</div>
 					<div class="item active">
-						<img src="img/fotos_eventos/Foto_11.jpg" alt="">
-					</div>
-					<div class="item">
 						<img src="img/fotos_eventos/Foto_12.jpg" alt="">
 					</div>
 					<div class="item">
